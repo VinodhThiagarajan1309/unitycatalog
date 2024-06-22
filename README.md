@@ -153,6 +153,16 @@ See the full [tutorial](docs/tutorial.md) for more details.
   ``` 
   This will regenerate the OpenAPI data models in the UC server and data models + APIs in the client SDK.
 
+- To serve the compiled on port 8080 `jar` run the following:
+  ```sh
+  java -cp "$(cat server/target/classpath):server/target/unitycatalog-server-<JAR_VERSION>.jar" io.unitycatalog.server.UnityCatalogServer
+  ```
+  eg
+  ```sh
+  java -cp "$(cat server/target/classpath):server/target/unitycatalog-server-0.1.0-SNAPSHOT.jar" io.unitycatalog.server.UnityCatalogServer
+  ```
+  
+
 ### Using more recent JDKs
 
 The build script [checks for a lower bound on the JDK](./build.sbt#L14) but the [current SBT version](./project/build.properties)
